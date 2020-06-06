@@ -1,0 +1,46 @@
+# Shopping App
+type Product {
+  category: String!
+  price: String!
+  stocked: Boolean!
+  name: String!
+  inCart: Boolean!
+}
+
+input Product_Input {
+  category: String!
+  price: String!
+  stocked: Boolean!
+  name: String!
+  inCart: Boolean!
+}
+
+type Query {
+  products: [Product!]!
+}
+
+type Mutation {
+  addProduct(category: String!, inCart: Boolean!, name: String!, price: String!, stocked: Boolean!): Product
+  _removeProduct(product: String!): Product
+  _updateCart(product: String!): Product
+  _removeFromCart(product: Product_Input!): Product
+}
+
+
+
+
+
+# Message App
+# type Message {
+#   author: String!
+#   body: String!
+#   title: String!
+# }
+
+# type Query {
+#   messages: [Message!]!
+# }
+
+# type Mutation {
+#   addMessage(body: String, author: String!, title: String!): Message
+# }
